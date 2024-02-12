@@ -1,24 +1,56 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-function Signin() {
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+function Signin() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate('/login')
-  }
+    navigate('/login');
+  };
+
+  const [password, setPassword] = useState('');
+  const [repassword, setRepassword] = useState('');
+
+  const passwordsMatch = password === repassword;
+
   return (
     <div className='signin'>
-        <h1 className='sigin-text'>Sign In</h1>
-        <input type='text' id='username' className='signin-username'></input>
-        <input type='password' id='password' className='signin-password'></input>
-        <h4 className='reenter'>Re-enter the password</h4>
-        <input type='password' id='password' className='signin-password'></input>
-        <button className='login-button'>Sign In</button>
-
-        <h4>Already have an account?<button className='sign-in' onClick={handleLogin}>Login</button> </h4>
+      <h1 className='sigin-text'>Sign In</h1>
+      <input
+        type='text'
+        id='username'
+        className='signin-username'
+        placeholder='Username'
+      />
+      <input
+        type='password'
+        id='password'
+        className='signin-password'
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder='Password'
+      />
+      <h4 className='reenter'>Re-enter the password</h4>
+      <input
+        type='password'
+        id='password'
+        className='signin-password'
+        value={repassword}
+        onChange={(e) => setRepassword(e.target.value)}
+        placeholder='Re-enter Password'
+      />
+      {!passwordsMatch && <h4>Passwords do not match</h4>}
+      <button className='login-button' onClick={handleLogin}>
+        Sign In
+      </button>
+      <h4>
+        Already have an account?
+        <button className='sign-in' onClick={handleLogin}>
+          Login
+        </button>
+      </h4>
     </div>
-  )
+  );
 }
 
-export default Signin
+export default Signin;
