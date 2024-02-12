@@ -1,0 +1,723 @@
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Reset some default styles for better consistency */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the topic frame */
+.topic-frame {
+  max-width: 15rem;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 12rem;
+}
+
+/* Styling for the topic title */
+.topic-title {
+  background-color: #3498db;
+  color: #fff;
+  padding: 15px;
+  margin: 0;
+}
+
+/* Styling for the topic image */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styling for the topic description */
+.topic-description {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Reset some default styles for better consistency */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.topics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Apply styling to each Topic component */
+.Topic {
+  max-width: 250px;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the topic title */
+.Topic .topic-title {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Styling for the topic image */
+.Topic img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styling for the topic description */
+.Topic .topic-description {
+  padding: 10px;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.chatbot {
+  /* Style the chatbot container here */
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.main-frame {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.blog-frame {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.blog-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.blog-brief-description {
+  color: #666;
+  font-size: 16px;
+}
+
+.world-history-blogs {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.world-history-blogs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Blog {
+  flex: 0 0 30%; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.Blog:hover {
+  transform: scale(1.05);
+}
+
+.Blog .blog-title {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.Blog .blog-brief-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.main-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.contribution {
+  color: #333;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.world-history-blogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Blog {
+  flex: 0 0 30%; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.Blog:hover {
+  transform: scale(1.05);
+}
+
+.Blog .blog-title {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.Blog .blog-brief-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.main-contribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+  background-color: #f0f0f0;
+}
+
+.blog-info {
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-name,
+.blog-description {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.blog-name-input,
+.blog-description-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+.main-contribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-info {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-name,
+.blog-description,
+.blog-author {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.blog-name-input,
+.blog-description-input,
+.blog-author-input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+.thanks-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.thanks {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.button-back {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.button-back:hover {
+  background-color: #45a049;
+}
+
+.main-contribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-info {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-name,
+.blog-description,
+.blog-actual,
+.blog-author {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.blog-name-input,
+.blog-description-input,
+.blog-actual-input,
+.blog-author-input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.blog-actual-input {
+  height: 150px; /* Adjust the height as needed */
+}
+
+.submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+.actual-frame {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.actual-blog-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.actual-blog-description {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.actual-blog {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.actual-blog-author {
+  font-size: 1.1em;
+  color: #888;
+}
+
+.delete-button {
+  margin-left: 32rem;
+  padding: 4px;
+  background-color: darkgoldenrod;
+  cursor: pointer;
+}
+
+.main-contribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-info {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+.blog-name-input,
+.blog-description-input,
+.blog-actual-input,
+.blog-author-input,
+.genre {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ffd700; /* Change the color on hover, e.g., to gold */
+}
+
+.about {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.about-the-author {
+  color: #333;
+}
+
+.about img {
+  max-width: 33%;
+  border-radius: 66%;
+  margin-top: 15px;
+  margin-left: 29rem; 
+} 
+
+.about-me-para {
+  color: #555;
+  line-height: 1.5;
+  margin-top: 15px;
+} 
+
+.contact {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.contact h3 {
+  color: #333;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.contact-logo {
+  width: 50px; /* Adjust the size according to your preference */
+  height: 50px;
+  margin: 0 10px;
+}
+
+/* Add your global styles if needed */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.username-area {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-button.sign-in {
+  background-color: #28a745;
+}
+
+.or {
+  margin: 10px 0;
+  color: #666;
+}
+
+.login-via {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.icon
+{
+  display: flex;
+  flex-direction: row;
+  margin-left: 8rem;
+}
+.google-icon,
+.linkedin-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+}
+
+/* Add media queries for responsiveness if needed */
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 20rem;
+  margin-left: 35rem;
+  margin-top: 7rem;
+}
+
+.sigin-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.signin-password {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reenter {
+  margin: 10px 0;
+  color: #666;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-button.sign-in {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
