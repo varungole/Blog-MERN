@@ -25,7 +25,8 @@ function Login() {
         let tempUser = data[i];
         if (tempUser.username === usernameToCheck && tempUser.password === password) {
           flag = true;
-          navigate('/');
+          navigate('/', {state: { isLoggedIn: true, username: usernameToCheck}});
+          console.log(usernameToCheck);
         }
       }
 
