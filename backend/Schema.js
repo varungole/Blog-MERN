@@ -28,6 +28,20 @@ const blogSchema = new Schema(
     }
 )
 
+const loginSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true
+        },
+
+        password: {
+            type: String,
+            required: true
+        },
+    }
+)
+
 
 const Blog = mongoose.model('Blog' , blogSchema);
 module.exports = Blog;
