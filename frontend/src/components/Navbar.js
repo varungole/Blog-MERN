@@ -1,45 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
+import useStore from './useStore';
 
 function Navbar() {
   const navigate = useNavigate();
-  
-  
-  const location = useLocation();
-  const isLoggedIn = location.state? location.state.isLoggedIn : '';
-  const username = location.state ? location.state.username : '';
+
+  const store = useStore();
+
   const handleClick = () => {
     navigate('/')
   }
 
   const handleLogout = () => {
     navigate('/login')
-  }
+  } 
 
-  const navigateAbout = () => {
-    navigate('/about' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
-  }
-
-  const navigateServices = () => {
-    navigate('/services' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
-  }
-
-  const navigateContact = () => {
-    navigate('/contact' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
-  }
 
     return (  
       <div className='main-navbar'>
       <div className='logo' onClick={handleClick}>V-Blog</div>
       <ul className='nav-links'>
-        <li onClick={navigateAbout}>About</li>
-        <li onClick={navigateServices}>Services</li>
-        <li onClick={navigateContact}>Contact</li>
+        
+        <li><a href='/'>Home</a></li>
+        <li><a href='/about'>About</a></li>
+        <li><a href='/services'>Services</a></li>
+        <li><a href='/contact'>Contact</a></li>
         <li className='dropdown'>
-          {isLoggedIn ? ( <p className='drop-btn' >Welcome, {username} </p> ) : (<a href='/login'>Login</a>)}
+          {store.isLoggedIn ? ( <p className='drop-btn' >Welcome, {store.name} </p> ) : (<a href='/login'>Login</a>)}
           </li>
           <li>
-            {isLoggedIn ? (<p className='logout' onClick={handleLogout}>Logout</p>): ''}</li>   
+            {store.isLoggedIn ? (<p className='logout' onClick={handleLogout}>Logout</p>): ''}</li>   
       </ul>
     </div>
     )

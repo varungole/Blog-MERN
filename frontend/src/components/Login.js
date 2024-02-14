@@ -2,6 +2,8 @@
   import GoogleIcon from './google-icon.png'
   import LinkedinIcon from './linkedin-icon.png'
   import { useNavigate } from 'react-router-dom';
+import useStore from './useStore';
+
 
   function Login() {
         
@@ -10,8 +12,12 @@
       const handleSignIn = () => {
           navigate('/signin')
       }
+      const store = useStore();  // Initialize the store
 
+      
+      
       const[username , getUsername] = useState('');
+      const[loggedIn , setLoggedIn] = useState(false);
       const[password , getPassword] = useState('');
 
       const handleLogin = async(e) => {
@@ -26,7 +32,10 @@
           if (tempUser.username === usernameToCheck && tempUser.password === password) {
             flag = true;
             navigate('/', {state: { isLoggedIn: true, username: usernameToCheck}});
-            console.log(usernameToCheck);
+            setLoggedIn(true);
+            store.setUsername(usernameToCheck); // Update the store
+            store.setLoggedIn(true);
+            
           }
         }
 
@@ -59,4 +68,4 @@
     )
   }
 
-  export default Login
+  export default Login ;
