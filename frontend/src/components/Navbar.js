@@ -3,10 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const navigate = useNavigate();
-
+  
+  
   const location = useLocation();
-  const isLoggedIn = location.state ? location.state.isLoggedIn : false;
-  const username = location.state? location.state.username: '';
+  const isLoggedIn = location.state? location.state.isLoggedIn : '';
+  const username = location.state ? location.state.username : '';
   const handleClick = () => {
     navigate('/')
   }
@@ -15,15 +16,25 @@ function Navbar() {
     navigate('/login')
   }
 
+  const navigateAbout = () => {
+    navigate('/about' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
+  }
+
+  const navigateServices = () => {
+    navigate('/services' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
+  }
+
+  const navigateContact = () => {
+    navigate('/contact' ,  {state: { isLoggedIn: isLoggedIn, username: username}});
+  }
+
     return (  
       <div className='main-navbar'>
       <div className='logo' onClick={handleClick}>V-Blog</div>
       <ul className='nav-links'>
-        
-        <li><a href='/'>Home</a></li>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/services'>Services</a></li>
-        <li><a href='/contact'>Contact</a></li>
+        <li onClick={navigateAbout}>About</li>
+        <li onClick={navigateServices}>Services</li>
+        <li onClick={navigateContact}>Contact</li>
         <li className='dropdown'>
           {isLoggedIn ? ( <p className='drop-btn' >Welcome, {username} </p> ) : (<a href='/login'>Login</a>)}
           </li>

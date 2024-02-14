@@ -17,7 +17,6 @@ import Signin from './components/Signin';
 function App() {
   return (
       
-    
       <BrowserRouter>
       <Navbar />
       <Routes>

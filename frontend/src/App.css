@@ -725,3 +725,7 @@ input {
 .logout {
   cursor: pointer;
 }
+
+.nav-links {
+  font-family : sans-serif
+}
