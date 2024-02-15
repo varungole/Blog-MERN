@@ -17,7 +17,6 @@ import useStore from './useStore';
       
       
       const[username , getUsername] = useState('');
-      const[loggedIn , setLoggedIn] = useState(false);
       const[password , getPassword] = useState('');
 
       const handleLogin = async(e) => {
@@ -31,8 +30,7 @@ import useStore from './useStore';
           let tempUser = data[i];
           if (tempUser.username === usernameToCheck && tempUser.password === password) {
             flag = true;
-            navigate('/', {state: { isLoggedIn: true, username: usernameToCheck}});
-            setLoggedIn(true);
+            navigate('/');
             store.setUsername(usernameToCheck); // Update the store
             store.setLoggedIn(true);
             

@@ -729,3 +729,16 @@ input {
 .nav-links {
   font-family : sans-serif
 }
+
+.nav-links {
+  cursor : pointer;
+}
+
+.topics {
+  cursor : pointer;
+}
+
+.contribution
+{
+  cursor : pointer;
+}

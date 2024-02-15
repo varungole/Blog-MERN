@@ -1,9 +1,13 @@
 import React, { useEffect , useState } from 'react'
 import Blog from './Blog'
 import { useNavigate } from 'react-router-dom';
+import useStore from './useStore';
 
 function Football() {
   const[data , setData] = useState([]);
+
+  const store = useStore();
+
 
 
 useEffect(() => {
@@ -26,7 +30,7 @@ useEffect(() => {
 const navigate = useNavigate();
 
 const handleClick = (title , actualBlog , description ,author , genre) => {
-  navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre}});
+  navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre , isLoggedIn: store.isLoggedIn, username: store.name}});
 }
 
 const deleteClick = async (_id) => {
@@ -44,11 +48,23 @@ const deleteClick = async (_id) => {
   window.location.reload(true);
 };
 
+const handleContribute = () => {
+  if(store.isLoggedIn === false)
+  {
+    alert('Login first!');
+    navigate('/login' , {state:{isLoggedIn: store.isLoggedIn, username: store.name}});
+  }
+  else
+  {
+  navigate('/contribute' , {state:{isLoggedIn: store.isLoggedIn, username: store.name}});
+  }
+}
+
 
 
   return (
     <div className='main-page'>
-      <h1 className='contribution'>Want to create your own blog? <a href='/contribute'>Contribute here!</a></h1>
+      <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
 
   <div className='world-history-blogs'>
   {data.map((obj, index) => (
