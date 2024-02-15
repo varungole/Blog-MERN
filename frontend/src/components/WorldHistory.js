@@ -13,13 +13,14 @@
       const url = "http://localhost:4050/blogs";
 
       const fetchData = async() => {
-        try{
+        try {
           const response = await fetch(url);
           const json = await response.json();
-          const filteredHistory = json.filter((item => item.genre === "History"));
-        setData(filteredHistory);
-        }catch(error) {
-          console.log("error" , error);
+          console.log(json);
+          const filteredHistory = json.filter((item) => item.genre === "History");
+          setData(filteredHistory);
+        } catch(error) {
+          console.log("error", error);
         }
       };
 
@@ -29,20 +30,10 @@
     const navigate = useNavigate();
 
     const handleClick = (title , actualBlog , description ,author , genre) => {
-      navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre , isLoggedIn: store.isLoggedIn, username: store.name}});
-    }
+      navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre}});
+      }
 
-    const handleContribute = () => {
-      if(store.isLoggedIn === false)
-      {
-        alert('Login first!');
-        navigate('/login' , {state:{isLoggedIn: store.isLoggedIn, username: store.name}});
-      }
-      else
-      {
-      navigate('/contribute' , {state:{isLoggedIn: store.isLoggedIn, username: store.name}});
-      }
-    }
+  
 
     const deleteClick = async (_id) => {
       await fetch('http://localhost:4050/blogs', {
@@ -63,7 +54,7 @@
 
       return (
         <div className='main-page'>
-          <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
+          <h1 className='contribution'>Want to create your own blog? <a href='/contribute'>Contribute here!</a></h1>
 
       <div className='world-history-blogs'>
       {data.map((obj, index) => (
