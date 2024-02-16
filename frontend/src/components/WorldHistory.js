@@ -27,6 +27,10 @@
       fetchData();
     } , []);
 
+    const handleContribute = () => {
+      navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    }
+
     const navigate = useNavigate();
 
     const handleClick = (title , actualBlog , description ,author , genre) => {
@@ -54,7 +58,7 @@
 
       return (
         <div className='main-page'>
-          <h1 className='contribution'>Want to create your own blog? <a href='/contribute'>Contribute here!</a></h1>
+          <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
 
       <div className='world-history-blogs'>
       {data.map((obj, index) => (

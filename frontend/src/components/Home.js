@@ -9,16 +9,35 @@ import { useNavigate } from 'react-router-dom'
 
 function Home() {
 
+  const navigate = useNavigate();
 
+
+  const handleHistory = () => {
+    navigate('/history' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  }
+
+  const handleGeo = () => {
+    navigate('/geography' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  }
+
+  const handleCompsci = () => {
+    navigate('/compsci' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  }
+
+  const handleFootball = () => {
+    navigate('/football' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  }
+  
   const store = useStore();
+  
   return (
     <div className='App'>
     <h1 className="welcome-title">Welcome to my blog-site!</h1>
     <div className="topics">
-    <a href='/history'><Topic title="History" image={History} /></a>
-      <a href='/geography'><Topic title="Geography" image={Geography}/> </a>
-      <a href='/compsci'><Topic title="Computer Science" image={ComputerScience}/></a> 
-      <a href='/football'><Topic title="Football" image={Football}/></a> 
+    <div onClick={handleHistory}><Topic title="History" image={History} /></div>
+      <div onClick={handleGeo}><Topic title="Geography" image={Geography}/> </div>
+      <div onClick={handleCompsci}><Topic title="Computer Science" image={ComputerScience}/></div> 
+      <div onClick={handleFootball}><Topic title="Football" image={Football}/></div> 
     </div>
     
 

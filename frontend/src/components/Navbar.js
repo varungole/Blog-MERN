@@ -15,6 +15,22 @@
       navigate('/login')
     } 
 
+    const handleAbout = () => {
+      navigate('/about' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    }
+
+    const handleServices = () => {
+      navigate('/about' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    }
+
+    const handleContact = () => {
+      navigate('/about' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    }
+
+    const handleHome = () => {
+      navigate('/about' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    }
+
 
 
     return (  
@@ -22,10 +38,10 @@
       <div className='logo' onClick={handleClick}>V-Blog</div>
       <ul className='nav-links'>
 
-        <li><a href='/'>Home</a></li>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/services'>Services</a></li>
-        <li><a href='/contact'>Contact</a></li>
+        <li><div onClick={handleHome}>Home</div></li>
+        <li><div onClick={handleAbout}>About</div></li>
+        <li><div onClick={handleServices}>Services</div></li>
+        <li><div onClick={handleContact}>Contact</div></li>
         <li className='dropdown'>
           {store.isLoggedIn ? ( <p className='drop-btn' >Welcome, {store.name} </p> ) : (<a href='/login'>Login</a>)}
           </li>

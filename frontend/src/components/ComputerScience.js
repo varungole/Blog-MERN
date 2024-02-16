@@ -48,11 +48,13 @@ const deleteClick = async (_id) => {
   window.location.reload(true);
 };
 
-
+const handleContribute = () => {
+  navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+}
 
   return (
     <div className='main-page'>
-      <h1 className='contribution'>Want to create your own blog? <a href='/contribute'>Contribute here!</a></h1>
+      <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
 
   <div className='world-history-blogs'>
   {data.map((obj, index) => (

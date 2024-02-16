@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import useStore from './useStore';
 
 function Contribute() {
 
@@ -10,6 +11,10 @@ function Contribute() {
   const[blogGenre, setBlogGenre] = useState('');
 
   const navigate = useNavigate();
+
+  const store = useStore();
+
+  console.log(store.name);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +33,7 @@ function Contribute() {
     });
 
     if (response.ok) {
-      navigate("/success");
+      navigate('/success' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
     } else {
       console.log('Not successful');
     }

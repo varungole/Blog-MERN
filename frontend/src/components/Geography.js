@@ -42,21 +42,20 @@ const deleteClick = async (_id) => {
     body: JSON.stringify({
       _id: _id,
     }),
-
-   
   });
-  window.location.reload(true);
 };
 
-
+const handleContribute = () => {
+  navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+}
 
   return (
     <div className='main-page'>
-      <h1 className='contribution'>Want to create your own blog? <a href='/contribute'>Contribute here!</a></h1>
+      <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
 
   <div className='world-history-blogs'>
   {data.map((obj, index) => (
-        <Blog title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
+        <Blog id={index} title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
       ))}
   
   </div>
