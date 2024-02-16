@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
   padding: 20px;
@@ -54,17 +53,6 @@ img {
 body, h1, h2, p {
   margin: 0;
   padding: 0;
-}
-
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
-.welcome-title {
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 20px;
 }
 
 .topics {
@@ -131,48 +119,9 @@ body, h1, h2, p {
   border-radius: 8px;
 }
 
-.blog-title {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.blog-brief-description {
-  color: #666;
-  font-size: 16px;
-}
-
 .world-history-blogs {
   display: flex;
   justify-content: space-between;
-}
-
-
-.world-history-blogs {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Blog {
-  flex: 0 0 30%; /* Adjust the width as needed */
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.Blog:hover {
-  transform: scale(1.05);
-}
-
-.Blog .blog-title {
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 15px;
 }
 
 .Blog .blog-brief-description {
@@ -220,6 +169,7 @@ body, h1, h2, p {
   color: #333;
   font-size: 20px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .Blog .blog-brief-description {
