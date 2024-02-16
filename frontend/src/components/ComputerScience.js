@@ -7,15 +7,15 @@ function ComputerScience() {
   const[data , setData] = useState([]);
 
   const store = useStore();
+  const API_URL = "http://localhost:4050/blogs";
 
 
 
 useEffect(() => {
-  const url = "http://localhost:4050/blogs";
 
   const fetchData = async() => {
     try{
-      const response = await fetch(url);
+      const response = await fetch(API_URL);
       const json = await response.json();
       const filteredHistory = json.filter((item => item.genre === "ComputerScience"));
     setData(filteredHistory);
@@ -34,7 +34,7 @@ const handleClick = (title , actualBlog , description ,author , genre) => {
 }
 
 const deleteClick = async (_id) => {
-  await fetch('http://localhost:4050/blogs', {
+  await fetch(API_URL, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -49,7 +49,15 @@ const deleteClick = async (_id) => {
 };
 
 const handleContribute = () => {
-  navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  if(store.isLoggedIn === false)
+  {
+    alert('Please login to contribute');
+    navigate('/login' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}});
+  }
+  else
+  {
+  navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}});
+  } 
 }
 
   return (
@@ -58,7 +66,7 @@ const handleContribute = () => {
 
   <div className='world-history-blogs'>
   {data.map((obj, index) => (
-        <Blog title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
+        <Blog key = {index} title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
       ))}
   
   </div>

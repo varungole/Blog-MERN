@@ -12,32 +12,20 @@ function Home() {
   const navigate = useNavigate();
 
 
-  const handleHistory = () => {
-    navigate('/history' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+  const handleTopicPath = (topicPath) => {
+    navigate(`/${topicPath}` , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
   }
 
-  const handleGeo = () => {
-    navigate('/geography' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
-  }
-
-  const handleCompsci = () => {
-    navigate('/compsci' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
-  }
-
-  const handleFootball = () => {
-    navigate('/football' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
-  }
-  
   const store = useStore();
   
   return (
     <div className='App'>
     <h1 className="welcome-title">Welcome to my blog-site!</h1>
     <div className="topics">
-    <div onClick={handleHistory}><Topic title="History" image={History} /></div>
-      <div onClick={handleGeo}><Topic title="Geography" image={Geography}/> </div>
-      <div onClick={handleCompsci}><Topic title="Computer Science" image={ComputerScience}/></div> 
-      <div onClick={handleFootball}><Topic title="Football" image={Football}/></div> 
+    <div onClick={() => handleTopicPath('history')}><Topic title="History" image={History} /></div>
+      <div onClick={() => handleTopicPath('geography')}><Topic title="Geography" image={Geography}/> </div>
+      <div onClick={() => handleTopicPath('compsci')}><Topic title="Computer Science" image={ComputerScience}/></div> 
+      <div onClick={() => handleTopicPath('football')}><Topic title="Football" image={Football}/></div> 
     </div>
     
 
