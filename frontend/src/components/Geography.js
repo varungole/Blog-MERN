@@ -5,7 +5,6 @@ import useStore from './useStore';
 
 function Geography() {
   const[data , setData] = useState([]);
-
   const store = useStore();
   const API_URL = "http://localhost:4050/blogs";
 
@@ -26,12 +25,11 @@ useEffect(() => {
   fetchData();
 } , []);
 
-
 const navigate = useNavigate();
 
 const handleClick = (title , actualBlog , description ,author , genre) => {
   
-  navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre}});
+navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre}});
 }
 
 const deleteClick = async (_id) => {
@@ -54,14 +52,13 @@ const handleContribute = () => {
   }
   else
   {
-  navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
+    navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
   }
 }
 
   return (
     <div className='main-page'>
       <h1 className='contribution'>Want to create your own blog? <div onClick={handleContribute}>Contribute here!</div></h1>
-
   <div className='world-history-blogs'>
   {data.map((obj, index) => (
         <Blog key={index} title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>

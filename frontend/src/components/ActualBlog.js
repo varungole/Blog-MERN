@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom'
 function ActualBlog() {
 
     const location = useLocation();
-    console.log(location.state.actualBlog);
   return (
     <div className='actual-frame'>
     <h1 className='actual-blog-title'>{location.state.title}</h1>

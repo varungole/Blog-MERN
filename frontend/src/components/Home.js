@@ -11,11 +11,9 @@ function Home() {
 
   const navigate = useNavigate();
 
-
   const handleTopicPath = (topicPath) => {
     navigate(`/${topicPath}` , {state : {isLoggedIn : store.isLoggedIn , username : store.name}})
   }
-
   const store = useStore();
   
   return (

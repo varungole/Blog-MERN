@@ -4,12 +4,8 @@
 
   function Navbar() {
     const navigate = useNavigate();
-
     const store = useStore();
-
-    const handleClick = () => {
-      navigate('/')
-    }
+    
 
     const handleTopicPath = (topicPath) => {
       if(topicPath === 'login')
@@ -26,7 +22,7 @@
 
     return (  
       <div className='main-navbar'>
-      <div className='logo' onClick={handleClick}>V-Blog</div>
+      <div className='logo' onClick={() => handleTopicPath('')}>V-Blog</div>
       <ul className='nav-links'>
 
         <li><div onClick={() => handleTopicPath('')}>Home</div></li>

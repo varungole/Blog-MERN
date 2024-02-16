@@ -13,9 +13,7 @@ function Contribute() {
   const navigate = useNavigate();
 
   const store = useStore();
-
-  console.log(store.name);
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch('http://localhost:4050/blogs', {

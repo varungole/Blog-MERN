@@ -5,14 +5,10 @@ import useStore from './useStore';
 
 function Football() {
   const[data , setData] = useState([]);
-
   const store = useStore();
   const API_URL = "http://localhost:4050/blogs";
 
-
 useEffect(() => {
- 
-
   const fetchData = async() => {
     try{
       const response = await fetch(API_URL);
@@ -23,7 +19,6 @@ useEffect(() => {
       console.log("error" , error);
     }
   };
-
   fetchData();
 } , []);
 
@@ -42,8 +37,6 @@ const deleteClick = async (_id) => {
     body: JSON.stringify({
       _id: _id,
     }),
-
-   
   });
   window.location.reload(true);
 };

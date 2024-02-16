@@ -14,8 +14,6 @@ import useStore from './useStore';
       }
       const store = useStore();  // Initialize the store
 
-      
-      
       const[username , getUsername] = useState('');
       const[password , getPassword] = useState('');
 
@@ -40,10 +38,8 @@ import useStore from './useStore';
         if(flag === false)
         {
           alert('Incorrect username or password');
-
-        return;
+          return;
         }
-
       }
 
     return (
@@ -66,4 +62,4 @@ import useStore from './useStore';
     )
   }
 
-  export default Login ;
+  export default Login;
