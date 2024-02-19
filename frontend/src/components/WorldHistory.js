@@ -41,21 +41,23 @@
       navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:description , author:author , genre:genre}});
       }
 
-    const deleteClick = async (_id) => {
-      await fetch(API_URL, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          _id: _id,
-        }),
-
+      const deleteClick = async (_id) => {
+        try{
+        await fetch(API_URL, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            _id: _id,
+          }),
+        });
+        navigate('/');
+      } catch(err) {
+        console.log(err);
+      }
        
-      });
-      window.location.reload(true);
-    };
-
+      };
 
 
       return (

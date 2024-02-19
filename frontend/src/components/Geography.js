@@ -33,6 +33,7 @@ navigate('/blog',{state:{title:title,actualBlog:actualBlog , description:descrip
 }
 
 const deleteClick = async (_id) => {
+  try{
   await fetch(API_URL, {
     method: 'DELETE',
     headers: {
@@ -42,6 +43,11 @@ const deleteClick = async (_id) => {
       _id: _id,
     }),
   });
+  navigate('/geography');
+} catch(err) {
+  console.log(err);
+}
+ 
 };
 
 const handleContribute = () => {

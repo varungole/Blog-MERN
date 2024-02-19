@@ -29,6 +29,7 @@ const handleClick = (title , actualBlog , description ,author , genre) => {
 }
 
 const deleteClick = async (_id) => {
+  try{
   await fetch(API_URL, {
     method: 'DELETE',
     headers: {
@@ -38,7 +39,10 @@ const deleteClick = async (_id) => {
       _id: _id,
     }),
   });
-  window.location.reload(true);
+  navigate('/');
+} catch(err) {
+  console.log(err);
+}
 };
 
 const handleContribute = () => {

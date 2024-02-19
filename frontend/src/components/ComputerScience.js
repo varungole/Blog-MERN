@@ -3,16 +3,12 @@ import Blog from './Blog'
 import { useNavigate } from 'react-router-dom';
 import useStore from './useStore';
 
-function ComputerScience() {
+function Football() {
   const[data , setData] = useState([]);
-
   const store = useStore();
   const API_URL = "http://localhost:4050/blogs";
 
-
-
 useEffect(() => {
-
   const fetchData = async() => {
     try{
       const response = await fetch(API_URL);
@@ -23,7 +19,6 @@ useEffect(() => {
       console.log("error" , error);
     }
   };
-
   fetchData();
 } , []);
 
@@ -34,6 +29,7 @@ const handleClick = (title , actualBlog , description ,author , genre) => {
 }
 
 const deleteClick = async (_id) => {
+  try{
   await fetch(API_URL, {
     method: 'DELETE',
     headers: {
@@ -42,10 +38,14 @@ const deleteClick = async (_id) => {
     body: JSON.stringify({
       _id: _id,
     }),
-  })
-  
-  window.location.reload(true);
+  });
+  navigate('/');
+} catch(err) {
+  console.log(err);
+}
+ 
 };
+
 
 const handleContribute = () => {
   if(store.isLoggedIn === false)
@@ -56,7 +56,7 @@ const handleContribute = () => {
   else
   {
   navigate('/contribute' , {state : {isLoggedIn : store.isLoggedIn , username : store.name}});
-  } 
+  }
 }
 
   return (
@@ -65,7 +65,7 @@ const handleContribute = () => {
 
   <div className='world-history-blogs'>
   {data.map((obj, index) => (
-        <Blog key = {index} title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
+        <Blog key={index} title={obj.title} description={obj.description} onClick={()=> {handleClick(obj.title , obj.actualBlog , obj.description , obj.author, obj.genre)}} onDeleteClick={() => {deleteClick(obj._id)}}/>
       ))}
   
   </div>
@@ -73,4 +73,4 @@ const handleContribute = () => {
   )
 }
 
-export default ComputerScience
+export default Football
