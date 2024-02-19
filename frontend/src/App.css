@@ -397,8 +397,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 15px;
+  background-color: #5f4c4c;
+  padding: 4px;
   color: white;
 }
 
@@ -406,22 +406,38 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 5px;
+  color: 	#c5aa6a;
 }
 
 .nav-links {
   list-style-type: none;
   display: flex;
   gap: 20px;
+  color: white;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links li {
   margin: 0;
 }
 
+.navbar-button {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-button:hover {
+  color: #ffd700;
+}
+
 .nav-links a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
@@ -595,8 +611,9 @@ input {
   border: none;
   border-radius: 4px;
   background-color: #007bff;
-  color: #fff;
+  color : #c5aa6a;
   cursor: pointer;
+
 }
 
 .login-button.sign-in {

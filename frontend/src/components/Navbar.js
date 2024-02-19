@@ -25,12 +25,12 @@
       <div className='logo' onClick={() => handleTopicPath('')}>V-Blog</div>
       <ul className='nav-links'>
 
-        <li><div onClick={() => handleTopicPath('')}>Home</div></li>
-        <li><div onClick={() => handleTopicPath('about')}>About</div></li>
-        <li><div onClick={() => handleTopicPath('service')}>Services</div></li>
-        <li><div onClick={() => handleTopicPath('contact')}>Contact</div></li>
+        <li><div className='navbar-button' onClick={() => handleTopicPath('')}>Home</div></li>
+        <li><div className='navbar-button' onClick={() => handleTopicPath('about')}>About</div></li>
+        <li><div className='navbar-button'onClick={() => handleTopicPath('service')}>Services</div></li>
+        <li><div className='navbar-button'onClick={() => handleTopicPath('contact')}>Contact</div></li>
         <li className='dropdown'>
-          {store.isLoggedIn ? ( <p className='drop-btn' >Welcome, {store.name} </p> ) : (<a href='/login'>Login</a>)}
+          {store.isLoggedIn ? ( <p className='drop-btn' >Welcome, {store.name} </p> ) : (<div onClick={() => handleTopicPath('')} className='navbar-button'>Login</div>)}
           </li>
           <li>
             {store.isLoggedIn ? (<p className='logout' onClick={() => handleTopicPath('login')}>Logout</p>): ''}</li>   

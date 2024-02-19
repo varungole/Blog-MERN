@@ -43,7 +43,7 @@ const deleteClick = async (_id) => {
       _id: _id,
     }),
   });
-  navigate('/geography');
+  navigate('/');
 } catch(err) {
   console.log(err);
 }
