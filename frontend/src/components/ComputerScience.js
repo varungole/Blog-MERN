@@ -42,9 +42,8 @@ const deleteClick = async (_id) => {
     body: JSON.stringify({
       _id: _id,
     }),
-
-   
-  });
+  })
+  
   window.location.reload(true);
 };
 
